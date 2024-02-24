@@ -77,14 +77,14 @@ const processDocument = async (filePath) => {
     // TODO: check if the check exists in the database
 
     if (chunk) {
-      const { data, error } = await supabase
+      const { data } = await supabase
         .from('lore')
         .select('*')
-        .eq('content', chunk);
-      if (error) {
-        console.error('Error fetching lore:', error);
-        // return;
-      }
+        .eq('content', { content: chunk });
+      // if (error) {
+      //   console.error('Error fetching lore:', error);
+      //   // return;
+      // }
 
       if (data?.length === 0) {
         console.log('adding lore');

@@ -341,7 +341,11 @@ router.post('/', async (request, env, event) => {
       (async () => {
         let responseContent = 'How can I assist you?'; // Default response
         if (interaction.data.name === HELP_COMMAND.name) {
+          console.log('handling help command');
+          console.log('OPENAI_API_KEY', env.OPENAI_API_KEY);
+          console.log('message', message);
           const data = (await runtime.handleRequest(message)) as Content;
+          console.log('data', data);
 
           responseContent = `You asked: \`\`\`${
             (message.content as Content).content
