@@ -1,6 +1,4 @@
-# creditbot
-
-Community Helperbot for Discord
+# The Alliance Community Discord Bot
 
 This bot features the following commands:
 /help - Get help, based on the documentation the bot has been trained on
